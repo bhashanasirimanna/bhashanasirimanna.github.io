@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Fonts */
+  --font-display: var(--font-cal-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-decorative: var(--font-boldonse), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* Core palette */
+  --color-ink: #121212;
+  --color-paper: #eaeaea;
+  --color-paper-card: #e5e5e5;
+  --color-accent: #7de112;
+  --color-accent-soft-bg: #ddffb9;
+  --color-accent-soft-text: #509b00;
+  --color-chip: #d9d9d9;
+  --color-skill-card: #20211e;
+
+  /* Testimonial card tokens (light cards on dark section) */
+  --color-testimonial-name: #0f1125;
+  --color-testimonial-role: #717276;
+  --color-testimonial-link: #65c300;
+
+  /* Easing */
+  --ease-portfolio: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-ink);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: -100px;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: var(--color-accent);
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: top 0.2s var(--ease-portfolio);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
