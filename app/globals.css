@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/*
+ * Device tiers (replace sm/md/lg/xl everywhere):
+ *   (no prefix)  mobile            - reference height  956px  -> vh = px / 956  * 100
+ *   tp:          tablet portrait   - reference height 1376px  -> vh = px / 1376 * 100
+ *   tl:          tablet landscape  - reference height 1032px  -> vh = px / 1032 * 100
+ *   dt:          desktop           - reference height  816px  -> vh = px / 816  * 100
+ * The tiers are mutually exclusive above mobile:
+ *   tp: portrait, >= 700px wide
+ *   tl: landscape, 1024-1439px wide and >= 900px tall (iPad-Pro-13 style 1376x1032)
+ *   dt: landscape, >= 1440px wide, or >= 1024px wide and < 900px tall (laptops)
+ * Everything else (phones, small windows) uses the unprefixed mobile values.
+ */
+@custom-variant tp (@media (min-width: 700px) and (orientation: portrait));
+@custom-variant tl (@media (min-width: 1024px) and (max-width: 1439px) and (min-height: 900px) and (orientation: landscape));
+@custom-variant dt (@media (orientation: landscape) and ((min-width: 1440px) or ((min-width: 1024px) and (max-height: 899px))));
+
 @theme inline {
   /* Fonts */
   --font-display: var(--font-cal-sans), ui-sans-serif, system-ui, sans-serif;
@@ -48,19 +64,34 @@ body {
 .skip-link {
   position: absolute;
   left: 50%;
-  top: -100px;
+  top: -10.46vh;
   transform: translateX(-50%);
   z-index: 100;
   background: var(--color-accent);
   color: #000;
-  padding: 12px 20px;
+  padding: 1.255vh 2.092vh;
   border-radius: 9999px;
   font-weight: 600;
   transition: top 0.2s var(--ease-portfolio);
 }
 
 .skip-link:focus {
-  top: 16px;
+  top: 1.674vh;
+}
+
+@variant tp {
+  .skip-link { top: -7.27vh; padding: 0.872vh 1.453vh; }
+  .skip-link:focus { top: 1.163vh; }
+}
+
+@variant tl {
+  .skip-link { top: -9.69vh; padding: 1.163vh 1.938vh; }
+  .skip-link:focus { top: 1.55vh; }
+}
+
+@variant dt {
+  .skip-link { top: -12.255vh; padding: 1.471vh 2.451vh; }
+  .skip-link:focus { top: 1.961vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {

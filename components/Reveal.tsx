@@ -7,18 +7,18 @@ interface RevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  y?: number;
+  y?: string;
   as?: "div" | "span";
 }
 
-export default function Reveal({ children, className, delay = 0, y = 24, as = "div" }: RevealProps) {
+export default function Reveal({ children, className, delay = 0, y = "2.941vh", as = "div" }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const variants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : y },
+    hidden: { opacity: 0, y: shouldReduceMotion ? "0vh" : y },
     visible: {
       opacity: 1,
-      y: 0,
+      y: "0vh",
       transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
     },
   };
@@ -30,7 +30,7 @@ export default function Reveal({ children, className, delay = 0, y = 24, as = "d
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-10%" }}
       variants={variants}
     >
       {children}

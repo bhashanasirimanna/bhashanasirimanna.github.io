@@ -22,7 +22,7 @@ export function RevealStaggerGroup({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-10%" }}
       variants={container}
     >
       {children}
@@ -33,19 +33,19 @@ export function RevealStaggerGroup({
 export function RevealStaggerItem({
   children,
   className,
-  y = 24,
+  y = "2.941vh",
 }: {
   children: ReactNode;
   className?: string;
-  y?: number;
+  y?: string;
 }) {
   const shouldReduceMotion = useReducedMotion();
 
   const item: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : y },
+    hidden: { opacity: 0, y: shouldReduceMotion ? "0vh" : y },
     visible: {
       opacity: 1,
-      y: 0,
+      y: "0vh",
       transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
     },
   };

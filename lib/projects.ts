@@ -90,7 +90,8 @@ export const projects: Project[] = [
     technologies: ["BiLSTM", "ONNX Runtime", "NestJS", "YOLOv8", "Federated Learning", "Microservices"],
     images: ["brinex-logo.jpg"],
     logoCover: true,
-    paperUrl: "#",
+    liveUrl: "https://final-year-research-static-website.vercel.app/presentations",
+    paperUrl: "https://ieeexplore.ieee.org/document/11537206",
   },
   {
     name: "MontiParents",
@@ -129,6 +130,7 @@ export const projects: Project[] = [
       "montiparent-meals-tab.jpeg",
       "montiparent-profile-tab.jpeg",
     ],
+    repoUrl: "https://github.com/SE4020/se4020-2026-assignment-02-bhashanasirimanna",
   },
   {
     name: "Booksphere",
@@ -164,6 +166,7 @@ export const projects: Project[] = [
     ],
     technologies: ["MongoDB", "Express", "React", "Node.js", "REST API"],
     images: ["booksphere-landing.png", "booksphere-list.png", "booksphere-book-details.png"],
+    repoUrl: "https://github.com/bhashanasirimanna/BookSphere",
   },
   {
     name: "BusMateSL",
@@ -199,6 +202,7 @@ export const projects: Project[] = [
     ],
     technologies: ["React Native", "Mapbox", "Geolocation"],
     images: ["busmatesl-poster.jpg"],
+    repoUrl: "https://github.com/CodeMind-s/BusMateSL",
   },
   {
     name: "Cinemania",
@@ -231,31 +235,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Java", "SQL", "Apache Tomcat", "HTML", "CSS"],
     images: ["cinemania-landing.png", "cinemania-movie-list.png", "cinemania-logo.png"],
-  },
-  {
-    name: "Clean Path",
-    period: "Jun 2024 – Oct 2024",
-    category: "Web",
-    summary:
-      "Smart waste management web app streamlining collection schedules, collectors and resident device requests.",
-    intro: [
-      "CleanPath is a smart waste management web application designed to streamline urban waste collection and promote sustainability. The platform empowers administrators to efficiently manage collection schedules, track waste collectors, and process resident requests for smart devices. Featuring a highly responsive and user-friendly interface, CleanPath bridges the gap between residents and city services to deliver a transparent, technology-driven solution for modern urban environments.",
-    ],
-    technologies: ["Web App", "Waste Management", "Admin Dashboard"],
-    images: ["clean-path.jpg"],
-  },
-  {
-    name: "My Friend",
-    period: "May 2024 – Jun 2024",
-    category: "Mobile",
-    summary:
-      "Multi-platform task management app for organizing daily routines, with responsive performance anywhere.",
-    intro: [
-      "\"My Friend\" is a versatile task management application designed to help users effortlessly organize their daily routines and projects. Built with a clean, user friendly interface, it allows users to quickly create, update, delete, and check off tasks.",
-      "With multi platform support across desktop, tablet, and mobile, it ensures responsive performance anywhere. Whether planning a day or jotting down reminders, My Friend makes productivity and task tracking a seamless experience.",
-    ],
-    technologies: ["Task Management", "Cross-platform", "Responsive UI"],
-    images: ["my-friend-flash.jpg", "my-friend-dashboard.jpg"],
+    repoUrl: "https://github.com/bhashanasirimanna/Cinemania-Movie-and-TV-series-browsing-system",
   },
   {
     name: "Pinnacle",
@@ -296,6 +276,8 @@ export const projects: Project[] = [
     ],
     technologies: ["Team of 8", "Streaming", "Payments", "Web App"],
     images: ["pinnacle-landing.png"],
+    repoUrl: "https://github.com/bhashanasirimanna/pinnacle",
+    liveUrl: "https://pinnacle-zeta-lac.vercel.app/",
   },
   {
     name: "Space Survivor",
@@ -332,6 +314,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Kotlin", "Android Studio", "Game Logic Design", "Mobile Game Development"],
     images: ["space-survivor-before-start.jpg", "space-survivor-whil-play.jpg"],
+    repoUrl: "https://github.com/bhashanasirimanna/Space-Shooter-Android-Game",
   },
   {
     name: "UniBoard",
@@ -365,6 +348,34 @@ export const projects: Project[] = [
     technologies: ["Java", "Android SDK"],
     images: ["uniboard-logo.png"],
     logoCover: true,
+    repoUrl: "https://github.com/bhashanasirimanna/Uniboard-android-app",
+  },
+    {
+    name: "Clean Path",
+    period: "Jun 2024 – Oct 2024",
+    category: "Web",
+    summary:
+      "Smart waste management web app streamlining collection schedules, collectors and resident device requests.",
+    intro: [
+      "CleanPath is a smart waste management web application designed to streamline urban waste collection and promote sustainability. The platform empowers administrators to efficiently manage collection schedules, track waste collectors, and process resident requests for smart devices. Featuring a highly responsive and user-friendly interface, CleanPath bridges the gap between residents and city services to deliver a transparent, technology-driven solution for modern urban environments.",
+    ],
+    technologies: ["Web App", "Waste Management", "Admin Dashboard"],
+    images: ["clean-path.jpg"],
+    repoUrl: "https://github.com/CodeMind-s/CleanPath",
+  },
+  {
+    name: "My Friend",
+    period: "May 2024 – Jun 2024",
+    category: "Mobile",
+    summary:
+      "Multi-platform task management app for organizing daily routines, with responsive performance anywhere.",
+    intro: [
+      "\"My Friend\" is a versatile task management application designed to help users effortlessly organize their daily routines and projects. Built with a clean, user friendly interface, it allows users to quickly create, update, delete, and check off tasks.",
+      "With multi platform support across desktop, tablet, and mobile, it ensures responsive performance anywhere. Whether planning a day or jotting down reminders, My Friend makes productivity and task tracking a seamless experience.",
+    ],
+    technologies: ["Task Management", "Cross-platform", "Responsive UI"],
+    images: ["my-friend-flash.jpg", "my-friend-dashboard.jpg"],
+    repoUrl: "https://github.com/bhashanasirimanna/My-Friend-Todo-app",
   },
   {
     name: "Real Time Flood Warning System",
@@ -376,6 +387,7 @@ export const projects: Project[] = [
       "The Flood Monitoring System is designed to provide real-time monitoring and alerts for the Mathara district. It gathers data from various environmental sensors to monitor humidity, rainfall, water levels in lakes, and temperature. The system uses these inputs to predict potential flood conditions for the next two days and sends email warnings to registered users.",
     ],
     technologies: ["Environmental Sensors", "Flood Prediction", "Email Alerts"],
+    images: ["flood-warning-system-dashboard.png"],
   },
   {
     name: "Pluss International Website",
@@ -387,6 +399,7 @@ export const projects: Project[] = [
       "This side project was done as a first-year undergraduate. Developing the website for this client made me improve a lot and learn so many skills related to the field.",
     ],
     technologies: ["Web Development", "Client Project"],
+    liveUrl: "https://www.plussgroup.lk/",
   },
   {
     name: "Your Way",
@@ -399,5 +412,7 @@ export const projects: Project[] = [
       "Your Way is a web-based car rental system that connects car owners, customers, and drivers, providing a seamless platform for renting vehicles and hiring drivers. Car owners can list their cars for rent, customers can book cars on an hourly basis, and drivers can offer their services through the system.",
     ],
     technologies: ["Web Development", "Booking System"],
+    repoUrl: "https://github.com/bhashanasirimanna/YourWay",
+    images: ["your-way-landing.jpg", "your-way-logo.png"],
   },
 ];

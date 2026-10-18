@@ -1,13 +1,13 @@
 // Central source of truth for SEO + structured data.
-// NOTE: siteUrl is a placeholder — update it to the real deployed domain
-// before shipping (it feeds metadataBase, canonical URLs, sitemap and JSON-LD).
+// NOTE: siteUrl feeds metadataBase, canonical URLs, sitemap and JSON-LD.
+// Update it if you move to a custom domain.
 export const siteConfig = {
   name: "Induwara Sirimanna",
   title: "Induwara Sirimanna — Software Engineer",
   titleTemplate: "%s | Induwara Sirimanna",
   description:
     "Induwara Sirimanna is a software engineer specializing in high-availability distributed systems, multi-tenant SaaS platforms, and LLM / AI integrations.",
-  siteUrl: "https://induwarasirimanna.dev",
+  siteUrl: "https://bhashanasirimanna.github.io",
   email: "bhashanasirimanna@gmail.com",
   jobTitle: "Software Engineer",
   keywords: [
@@ -21,7 +21,7 @@ export const siteConfig = {
     "AI Integration Engineer",
   ],
   social: {
-    github: "https://github.com/bhashana",
+    github: "https://github.com/bhashanasirimanna",
     linkedin: "https://linkedin.com/in/bhashana",
   },
   themeColor: "#121212",

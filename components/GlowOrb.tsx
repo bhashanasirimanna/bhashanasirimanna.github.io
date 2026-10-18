@@ -15,7 +15,7 @@ export default function GlowOrb({ className = "", color = "#7de112" }: GlowOrbPr
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute rounded-full blur-[80px] ${className}`}
+      className={`pointer-events-none absolute rounded-full blur-[8.368vh] tp:blur-[5.814vh] tl:blur-[7.752vh] dt:blur-[9.804vh] ${className}`}
       style={{
         background: `radial-gradient(circle, ${color} 0%, transparent 75%)`,
       }}
