@@ -23,7 +23,7 @@ export const siteConfig = {
   ],
   social: {
     github: "https://github.com/bhashanasirimanna",
-    linkedin: "https://linkedin.com/in/bhashana",
+    linkedin: "https://www.linkedin.com/in/induwara-sirimanna",
   },
   themeColor: "#121212",
 };

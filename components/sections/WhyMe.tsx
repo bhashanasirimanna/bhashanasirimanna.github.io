@@ -45,7 +45,7 @@ export default function WhyMe() {
   return (
     <section
       id="why-me"
-      className="relative bg-ink px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.848vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[15.319vh]"
+      className="relative overflow-hidden bg-ink px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.848vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[15.319vh]"
     >
       <GlowOrb
         className="right-[-27.197vh] tp:right-[-21.802vh] tl:right-[-38.76vh] dt:right-[-63.725vh] top-[-12.552vh] tp:top-[-10.901vh] tl:top-[-19.38vh] dt:top-[-32.843vh] size-[41.841vh] tp:size-[43.605vh] tl:size-[62.984vh] dt:size-[87.01vh] rotate-[23deg] opacity-[0.26]"
@@ -67,7 +67,7 @@ export default function WhyMe() {
           {values.map(({ icon: Icon, title, subtitle, description, tint }) => (
             <RevealStaggerItem
               key={title}
-              className={`flex h-full flex-col items-start gap-[2.092vh] tp:gap-[1.744vh] tl:gap-[2.132vh] dt:gap-[3.309vh] rounded-[2.51vh] tp:rounded-[2.035vh] tl:rounded-[2.713vh] dt:rounded-[3.489vh] backdrop-blur-[2.51vh] tp:backdrop-blur-[1.744vh] tl:backdrop-blur-[2.326vh] dt:backdrop-blur-[2.941vh] p-[2.092vh] tp:p-[2.035vh] tl:p-[2.132vh] dt:p-[2.451vh] ${
+              className={`relative flex h-full flex-col items-start gap-[2.092vh] tp:gap-[1.744vh] tl:gap-[2.132vh] dt:gap-[3.309vh] rounded-[2.51vh] tp:rounded-[2.035vh] tl:rounded-[2.713vh] dt:rounded-[3.489vh] backdrop-blur-[2.51vh] tp:backdrop-blur-[1.744vh] tl:backdrop-blur-[2.326vh] dt:backdrop-blur-[2.941vh] p-[2.092vh] tp:p-[2.035vh] tl:p-[2.132vh] dt:p-[2.451vh] ${
                 tint ? "bg-white/10" : "bg-white/[0.03]"
               }`}
             ><div
