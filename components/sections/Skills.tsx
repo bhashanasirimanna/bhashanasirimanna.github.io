@@ -33,30 +33,31 @@ export default function Skills() {
   const visibleSkills = active === "All" ? skills : skills.filter((s) => s.category === active);
 
   return (
-    <section id="skills" className="relative overflow-hidden bg-ink px-6 py-20 sm:px-10 md:px-16 lg:px-[123px] lg:py-[107px]">
+    <section id="skills" className="relative overflow-hidden bg-ink px-6 py-20 sm:px-10 md:px-16 lg:px-[120px] lg:pt-[107px] lg:pb-[104px]">
       <p
         aria-hidden
-        className="pointer-events-none absolute -left-4 -top-16 hidden select-none whitespace-nowrap bg-gradient-to-b from-white from-[37%] to-white/0 bg-clip-text font-display text-[clamp(120px,24vw,346.96px)] font-bold leading-[0.9] text-transparent opacity-[0.02] sm:block"
+        className="pointer-events-none absolute -left-[17px] -top-[72px] hidden select-none whitespace-nowrap bg-gradient-to-b from-white to-white/0 bg-clip-text font-display text-[clamp(120px,24vw,346.96px)] font-bold leading-[0.9] text-transparent opacity-[0.02] sm:block"
       >
         Induwara
       </p>
+
       <GlowOrb
-        className="right-[-40px] top-[186px] size-[560px] rotate-[85deg] opacity-30"
+        className="right-[-590px] top-[66px] size-[864px] rotate-[85deg] opacity-30"
         color="#7de112"
       />
 
       <div className="relative mx-auto flex max-w-[1200px] flex-col items-start gap-10 lg:items-end lg:gap-[60px]">
-        <Reveal className="flex max-w-[612px] flex-col items-start gap-4 lg:items-end lg:gap-6 lg:text-right">
-          <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(36px,7vw,82px)] font-bold leading-[0.9] text-transparent opacity-90">
+        <Reveal className="flex max-w-[612px] flex-col items-start gap-4 lg:items-end lg:gap-[24px] lg:text-right">
+          <h2 className="bg-gradient-to-r from-white to-white/90 bg-clip-text font-display text-[clamp(36px,7vw,82px)] font-bold leading-[0.9] text-transparent">
             My Skills
           </h2>
-          <p className="font-body text-xl leading-[1.35] tracking-[1.2px] text-white/85 sm:text-2xl">
+          <p className="font-body text-xl leading-[1.35] tracking-[1.2px] text-white/85 sm:text-[24px]">
             Core technical proficiencies, frameworks, cloud infrastructure, and database ecosystems.
           </p>
         </Reveal>
 
-        <div className="flex w-full flex-col gap-10 lg:gap-14">
-          <div className="flex flex-wrap items-center gap-3" role="tablist" aria-label="Filter skills by category">
+        <div className="flex w-full flex-col gap-10 lg:gap-[56px]">
+          <div className="flex flex-wrap items-center gap-[23px]" role="tablist" aria-label="Filter skills by category">
             {filters.map((filter) => (
               <button
                 key={filter}
@@ -64,9 +65,9 @@ export default function Skills() {
                 role="tab"
                 aria-selected={active === filter}
                 onClick={() => setActive(filter)}
-                className={`rounded-full px-5 py-3 text-base font-normal transition-colors sm:px-6 sm:text-xl ${
+                className={`rounded-full px-5 py-[15.63px] text-base font-normal transition-colors sm:px-[23.45px] sm:text-[20px] ${
                   active === filter
-                    ? "bg-accent text-black"
+                    ? "bg-accent text-black border border-accent"
                     : "border border-white/40 bg-white/[0.06] text-white/70 hover:bg-white/10"
                 }`}
               >
@@ -75,19 +76,19 @@ export default function Skills() {
             ))}
           </div>
 
-          <RevealStaggerGroup className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <RevealStaggerGroup className="grid grid-cols-2 gap-x-[16px] gap-y-[44px] sm:grid-cols-3 lg:grid-cols-5">
             {visibleSkills.map((skill) => (
               <RevealStaggerItem
                 key={skill.name}
-                className="flex flex-col items-center gap-4 rounded-[28.467px] bg-skill-card p-5 text-center"
+                className="flex flex-col items-center gap-[16px] rounded-[28.467px] bg-skill-card p-[20.7px] text-center"
               >
                 <div className="flex size-[90px] items-center justify-center">
-                  <Image src={skill.logo} alt={`${skill.name} logo`} width={64} height={64} className="h-auto max-h-16 w-auto max-w-16" />
+                  <Image src={skill.logo} alt={`${skill.name} logo`} width={64} height={64} className="h-auto max-h-[64px] w-auto max-w-[54px]" />
                 </div>
-                <span className="rounded-full bg-white/[0.08] px-4 py-2 text-base font-medium text-white">
+                <span className="rounded-full bg-white/[0.08] px-[16px] py-[8px] text-[18px] font-medium text-white">
                   {skill.name}
                 </span>
-                <p className="font-body text-xs leading-[1.35] text-white/80">{skill.description}</p>
+                <p className="font-body text-[12px] leading-[1.35] text-white/80">{skill.description}</p>
               </RevealStaggerItem>
             ))}
           </RevealStaggerGroup>

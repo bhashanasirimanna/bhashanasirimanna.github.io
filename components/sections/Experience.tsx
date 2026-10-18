@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Briefcase, GraduationCap, Calendar } from "lucide-react";
+import {
+  Briefcase,
+  GraduationCap,
+  Calendar,
+  CalendarDaysIcon,
+} from "lucide-react";
 import Reveal from "@/components/Reveal";
-import { RevealStaggerGroup, RevealStaggerItem } from "@/components/RevealStagger";
+import {
+  RevealStaggerGroup,
+  RevealStaggerItem,
+} from "@/components/RevealStagger";
 import GlowOrb from "@/components/GlowOrb";
 
 const workExperience = [
@@ -52,27 +60,30 @@ function TimelineCard({
   tags?: string[];
 }) {
   return (
-    <div className="w-full rounded-[40px] bg-white/[0.07] p-6 sm:p-8">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white">
-          <Calendar className="size-[18px]" strokeWidth={1.75} />
+    <div className="w-full rounded-[40px] bg-white/[0.07] p-6 sm:p-[32px]">
+      <div className="flex flex-col gap-[8px] sm:flex-row sm:items-center sm:justify-between">
+        <span className="inline-flex w-fit items-center gap-[12px] rounded-full bg-white/[0.08] px-[16px] py-[8px] text-[14px] font-semibold text-white">
+          <CalendarDaysIcon className="size-[24px]" strokeWidth={1.75} />
           {period}
         </span>
-        <span className="text-sm font-semibold text-accent">{org}</span>
+        <span className="text-[14px] font-semibold text-accent">{org}</span>
       </div>
-      <div className="mt-6 flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <p className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-2xl font-bold leading-[0.9] text-transparent opacity-90 sm:text-[26px]">
+      <div className="mt-[32px] flex flex-col gap-[16px]">
+        <div className="flex flex-col gap-[9px]">
+          <p className="bg-gradient-to-r from-white to-white/90 bg-clip-text font-display text-2xl font-bold text-transparent opacity-90 sm:text-[26px]">
             {title}
           </p>
-          <p className="font-body text-sm leading-[1.35] tracking-[0.8px] text-white/85 sm:text-base">
+          <p className="font-body text-sm leading-[1.35] tracking-[0.8px] text-white/85 sm:text-[16px]">
             {description}
           </p>
         </div>
         {tags && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-[8px]">
             {tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-white/[0.08] px-4 py-2 text-sm text-white/80">
+              <span
+                key={tag}
+                className="rounded-full bg-white/[0.08] px-[16px] py-[8px] text-[14px] text-white/80"
+              >
                 {tag}
               </span>
             ))}
@@ -93,19 +104,27 @@ function TimelineGroup({
   children: React.ReactNode[];
 }) {
   return (
-    <div className="flex flex-col items-start gap-5">
-      <div className="flex items-center gap-4">
-        <Icon className="size-[28px] text-white/70" strokeWidth={1.75} />
-        <p className="font-body text-lg text-white/70 sm:text-xl">{label}</p>
+    <div className="flex flex-col items-start gap-[20px]">
+      <div className="flex items-center gap-[16px]">
+        <Icon className="size-[33px] text-white" strokeWidth={1.75} />
+        <p className="font-body text-lg text-white/70 sm:text-[20px]">
+          {label}
+        </p>
       </div>
-      <div className="relative w-full pl-8 sm:pl-11">
-        <span aria-hidden className="absolute left-[7px] top-4 bottom-4 w-px bg-white/20 sm:left-[15px]" />
-        <RevealStaggerGroup className="flex flex-col gap-6">
+      <div className="relative w-full">
+        <span
+          aria-hidden
+          className="absolute left-[7px] z-10 top-[36px] bottom-0 w-[1px] bg-white/50 sm:left-[16px]"
+        />
+        <RevealStaggerGroup className="flex flex-col gap-[24px]">
           {children.map((child, i) => (
-            <RevealStaggerItem key={i} className="relative">
+            <RevealStaggerItem
+              key={i}
+              className="relative gap-[22px] pl-[54px]"
+            >
               <span
                 aria-hidden
-                className="absolute -left-8 top-9 size-4 rounded-full border-2 border-white/40 bg-ink sm:-left-11"
+                className={`absolute left-[16px] z-20 -translate-x-1/2 top-[36px] size-[32px] rounded-full border-2 border-[#717171] ${i === 0 ? "bg-[#717171]" : "bg-ink"}`}
               />
               {child}
             </RevealStaggerItem>
@@ -122,34 +141,49 @@ export default function Experience() {
   const showEducation = active === "Overview" || active === "Education";
 
   return (
-    <section id="experience" className="relative overflow-hidden bg-ink px-6 py-20 sm:px-10 md:px-16 lg:px-[120px] lg:py-[99px]">
-      <GlowOrb className="left-[-280px] top-[500px] size-[583px] opacity-50" color="#7de112" />
-      <GlowOrb className="left-[-80px] top-[420px] size-[583px] opacity-30" color="#ffffff" />
+    <section
+      id="experience"
+      className="relative min-h-[1298px] overflow-hidden bg-ink px-6 py-20 sm:px-10 md:px-16 lg:px-[120px] lg:pt-[99px] lg:pb-[110px]"
+    >
+      <GlowOrb
+        className="left-[-200px] bottom-[70px] size-[583px] opacity-[0.2]"
+        color="#96FF26"
+      />
+      {/* <GlowOrb
+        className="left-[-80px] top-[420px] size-[583px] opacity-30"
+        color="#ffffff"
+      /> */}
+
+      <Reveal className=" absolute bottom-0 left-0  hidden max-w-[538px] lg:block lg:w-full">
+        <div className="relative mt-20 aspect-[628/779] w-full">
+        <div className=" absolute z-10 bottom-0 left-0 w-full aspect-[634/584] bg-linear-to-t from-[#121212] to-[#121212]/0" />
+          <Image
+            src="/images/profile/me-flip.png"
+            alt="Induwara Sirimanna, portrait"
+            fill
+            sizes="(min-width: 1024px) 480px, 0px"
+            className="object-cover object-top"
+          />
+        </div>
+      </Reveal>
 
       <div className="relative mx-auto flex max-w-[1200px] flex-col gap-14 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-        <Reveal className="order-2 hidden max-w-[538px] lg:order-1 lg:block lg:w-full">
-          <div className="relative mt-20 aspect-[628/779] w-full overflow-hidden rounded-[32px]">
-            <Image
-              src="/images/profile/education.png"
-              alt="Induwara Sirimanna, portrait"
-              fill
-              sizes="(min-width: 1024px) 480px, 0px"
-              className="object-cover object-top"
-            />
-          </div>
+        <Reveal className="flex flex-col max-w-[508px] items-start gap-[24px] lg:items-end lg:text-left">
+          <h2 className="bg-gradient-to-r from-white to-white/90 bg-clip-text font-display text-[clamp(32px,6vw,82px)] font-bold leading-[0.9] text-transparent">
+            Education &amp; Experience
+          </h2>
+          <p className="font-body text-xl leading-[1.35] tracking-[1.2px] text-white/85 sm:text-[24px]">
+            Academic foundation and professional trajectory in software
+            engineering.
+          </p>
         </Reveal>
 
-        <div className="order-1 flex w-full flex-col items-start gap-10 lg:order-2 lg:max-w-[656px] lg:items-end lg:gap-[60px]">
-          <Reveal className="flex flex-col items-start gap-4 lg:items-end lg:text-right">
-            <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(32px,6vw,82px)] font-bold leading-[0.9] text-transparent opacity-90">
-              Education &amp; Experience
-            </h2>
-            <p className="font-body text-xl leading-[1.35] tracking-[1.2px] text-white/85 sm:text-2xl">
-              Academic foundation and professional trajectory in software engineering.
-            </p>
-          </Reveal>
-
-          <div className="flex flex-wrap items-center gap-3" role="tablist" aria-label="Filter experience">
+        <div className="order-1 flex w-full flex-col items-start gap-10 lg:order-2 lg:max-w-[656px] lg:items-end lg:gap-[60px] lg:pt-[18px]">
+          <div
+            className="flex flex-wrap items-center gap-3 sm:gap-[23px]"
+            role="tablist"
+            aria-label="Filter experience"
+          >
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -157,20 +191,42 @@ export default function Experience() {
                 role="tab"
                 aria-selected={active === tab}
                 onClick={() => setActive(tab)}
-                className={`inline-flex items-center gap-3 rounded-full px-5 py-3 text-base font-normal transition-colors sm:px-6 sm:text-xl ${
+                className={`inline-flex items-center gap-[15.36px] rounded-full px-[23.45px] py-[15.63px] text-base font-normal transition-colors sm:px-[23.45px] sm:text-[20px] ${
                   active === tab
-                    ? "bg-accent text-black"
+                    ? "bg-accent text-black border border-accent"
                     : "border border-white/40 bg-white/[0.06] text-white/70 hover:bg-white/10"
                 }`}
               >
-                {tab === "Work Experience" && <Briefcase className="size-[22px]" strokeWidth={1.75} />}
-                {tab === "Education" && <GraduationCap className="size-[22px]" strokeWidth={1.75} />}
+                {tab === "Work Experience" &&
+                  (active === tab ? (
+                    <Briefcase className="size-[25px]" strokeWidth={1.75} />
+                  ) : (
+                    <Image
+                      src="/images/icon/work-experience-icon.png"
+                      alt="Briefcase icon"
+                      width={25}
+                      height={25}
+                      className="size-[25px]"
+                    />
+                  ))}
+                {tab === "Education" &&
+                  (active === tab ? (
+                    <GraduationCap className="size-[25px]" strokeWidth={1.75} />
+                  ) : (
+                    <Image
+                      src="/images/icon/education-icon.png"
+                      alt="Briefcase icon"
+                      width={25}
+                      height={25}
+                      className="size-[25px]"
+                    />
+                  ))}
                 {tab}
               </button>
             ))}
           </div>
 
-          <div className="flex w-full flex-col gap-11">
+          <div className="flex w-full flex-col gap-[44px]">
             {showWork && (
               <TimelineGroup icon={Briefcase} label="Work Experience">
                 {workExperience.map((item) => (
