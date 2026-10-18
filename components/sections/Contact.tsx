@@ -9,6 +9,8 @@ import GlowOrb from "@/components/GlowOrb";
 import { siteConfig } from "@/lib/site-config";
 
 const PHONE = "+94 78 87 73 936";
+// Injected at build time from .env.local locally, or the WEB3FORMS_ACCESS_KEY GitHub secret in CI.
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -38,24 +40,41 @@ function CopyButton({ value }: { value: string }) {
 }
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name")?.toString() ?? "";
-    const email = formData.get("email")?.toString() ?? "";
-    const subject = formData.get("subject")?.toString() || "New message from portfolio site";
-    const message = formData.get("message")?.toString() ?? "";
-
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    setStatus("sent");
+    if (status === "sending") return;
+    const form = e.currentTarget;
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setStatus("error");
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form).entries());
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...data,
+          access_key: WEB3FORMS_ACCESS_KEY,
+          from_name: "Portfolio contact form",
+          subject: data.subject || "New message from portfolio site",
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.success) throw new Error(json.message ?? "Request failed");
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
     <section id="contact" className="relative overflow-x-clip px-[2.092vh] tp:px-[2.907vh] tl:px-[4.651vh] dt:px-[7.23vh] py-[7.531vh] tp:py-[7.267vh] tl:py-[8.721vh] dt:py-[11.642vh]">
-      <GlowOrb className="left-1/3 opacity-30 -top-[26.151vh] tp:-top-[21.802vh] tl:-top-[29.07vh] dt:-top-[42.279vh] size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#424242" />
+      <GlowOrb className="left-1/3 opacity-70 -top-[26.151vh] tp:-top-[21.802vh] tl:-top-[29.07vh] dt:-top-[42.279vh] size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#424242" />
 
       <div className="relative mx-auto flex w-full flex-col items-center max-w-[62.762vh] tp:max-w-[65.407vh] tl:max-w-[124.031vh] dt:max-w-[161.887vh] gap-[5.021vh] tp:gap-[4.07vh] tl:gap-[5.426vh] dt:gap-[7.353vh]">
         <Reveal className="flex w-full flex-col items-center text-center max-w-[46.025vh] tp:max-w-[50.872vh] tl:max-w-[67.829vh] dt:max-w-[96.814vh] gap-[1.674vh] tp:gap-[1.453vh] tl:gap-[1.938vh] dt:gap-[2.941vh]">
@@ -68,7 +87,7 @@ export default function Contact() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="w-full bg-white/[0.04] rounded-[3.347vh] tp:rounded-[2.907vh] tl:rounded-[3.876vh] dt:rounded-[5.882vh] p-[2.092vh] tp:p-[2.907vh] tl:p-[3.488vh] dt:p-[7.843vh]">
+        <Reveal delay={0.1} className="w-full tp:bg-white/[0.04] tl:bg-white/[0.04] dt:bg-white/[0.04] rounded-[3.347vh] tp:rounded-[2.907vh] tl:rounded-[3.876vh] dt:rounded-[5.882vh] p-0 tp:p-[2.907vh] tl:p-[3.488vh] dt:p-[7.843vh]">
           <div className="flex flex-col tl:flex-row tl:items-start tl:justify-between dt:flex-row dt:items-start dt:justify-between gap-[4.184vh] tp:gap-[3.488vh] tl:gap-[3.101vh] dt:gap-[4.902vh]">
             <div className="flex w-full flex-col tl:max-w-[38.76vh] dt:max-w-[49.755vh] gap-[2.092vh] tp:gap-[1.744vh] tl:gap-[2.132vh] dt:gap-[3.431vh]">
               <div className="flex items-start bg-white/10 gap-[1.464vh] tp:gap-[1.163vh] tl:gap-[1.357vh] dt:gap-[1.961vh] p-[1.674vh] tp:p-[1.453vh] tl:p-[1.744vh] dt:p-[2.451vh] rounded-[2.51vh] tp:rounded-[2.035vh] tl:rounded-[2.326vh] dt:rounded-[3.489vh]">
@@ -134,6 +153,7 @@ export default function Contact() {
             </div>
 
             <form onSubmit={handleSubmit} className="flex w-full flex-col items-end bg-white/[0.04] tl:max-w-[67.829vh] dt:max-w-[92.279vh] gap-[2.51vh] tp:gap-[2.326vh] tl:gap-[2.713vh] dt:gap-[3.922vh] rounded-[2.929vh] tp:rounded-[2.907vh] tl:rounded-[3.488vh] dt:rounded-[5.324vh] p-[2.092vh] tp:p-[2.616vh] tl:p-[3.101vh] dt:p-[4.412vh]">
+              <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
               <div className="flex w-full flex-col gap-[1.255vh] tp:gap-[1.017vh] tl:gap-[1.163vh] dt:gap-[1.471vh]">
                 <div className="flex flex-col tp:flex-row tl:flex-row dt:flex-row gap-[1.255vh] tp:gap-[1.017vh] tl:gap-[1.163vh] dt:gap-[1.471vh]">
                   <div className="flex-1">
@@ -205,13 +225,29 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="flex items-center bg-accent font-medium leading-[1.4] text-black transition-transform hover:scale-[1.03] focus-visible:outline-accent focus-visible:outline-[0.209vh] tp:focus-visible:outline-[0.145vh] tl:focus-visible:outline-[0.194vh] dt:focus-visible:outline-[0.245vh] focus-visible:outline-offset-[0.209vh] tp:focus-visible:outline-offset-[0.145vh] tl:focus-visible:outline-offset-[0.194vh] dt:focus-visible:outline-offset-[0.245vh] gap-[0.837vh] tp:gap-[0.581vh] tl:gap-[0.775vh] dt:gap-[0.98vh] rounded-[1.464vh] tp:rounded-[1.017vh] tl:rounded-[1.26vh] dt:rounded-[1.698vh] py-[1.674vh] tp:py-[1.453vh] tl:py-[1.744vh] dt:py-[2.451vh] pl-[2.51vh] tp:pl-[2.035vh] tl:pl-[2.326vh] dt:pl-[2.941vh] pr-[2.092vh] tp:pr-[1.744vh] tl:pr-[1.938vh] dt:pr-[2.451vh] text-[1.883vh] tp:text-[1.599vh] tl:text-[1.744vh] dt:text-[2.451vh]"
+                disabled={status === "sending"}
+                className="flex items-center disabled:cursor-not-allowed disabled:opacity-60 bg-accent font-medium leading-[1.4] text-black transition-transform hover:scale-[1.03] focus-visible:outline-accent focus-visible:outline-[0.209vh] tp:focus-visible:outline-[0.145vh] tl:focus-visible:outline-[0.194vh] dt:focus-visible:outline-[0.245vh] focus-visible:outline-offset-[0.209vh] tp:focus-visible:outline-offset-[0.145vh] tl:focus-visible:outline-offset-[0.194vh] dt:focus-visible:outline-offset-[0.245vh] gap-[0.837vh] tp:gap-[0.581vh] tl:gap-[0.775vh] dt:gap-[0.98vh] rounded-[1.464vh] tp:rounded-[1.017vh] tl:rounded-[1.26vh] dt:rounded-[1.698vh] py-[1.674vh] tp:py-[1.453vh] tl:py-[1.744vh] dt:py-[2.451vh] pl-[2.51vh] tp:pl-[2.035vh] tl:pl-[2.326vh] dt:pl-[2.941vh] pr-[2.092vh] tp:pr-[1.744vh] tl:pr-[1.938vh] dt:pr-[2.451vh] text-[1.883vh] tp:text-[1.599vh] tl:text-[1.744vh] dt:text-[2.451vh]"
               >
-                Submit Message
+                {status === "sending" ? "Sending…" : "Submit Message"}
                 <ArrowUpRight className="size-[2.301vh] tp:size-[1.744vh] tl:size-[2.132vh] dt:size-[2.696vh]" strokeWidth={1.75} />
               </button>
-              <p role="status" className="sr-only" aria-live="polite">
-                {status === "sent" ? "Opening your email client to send the message." : ""}
+              <p
+                role="status"
+                aria-live="polite"
+                className={`self-end text-right font-body leading-[1.35] text-[1.464vh] tp:text-[1.308vh] tl:text-[1.55vh] dt:text-[1.961vh] ${
+                  status === "error" ? "text-red-400" : "text-accent"
+                } ${status === "sent" || status === "error" ? "" : "sr-only"}`}
+              >
+                {status === "sent" && "Message sent. Thank you, I will get back to you soon."}
+                {status === "error" && (
+                  <>
+                    Something went wrong. Please email me at{" "}
+                    <a href={`mailto:${siteConfig.email}`} className="underline">
+                      {siteConfig.email}
+                    </a>
+                    .
+                  </>
+                )}
               </p>
             </form>
           </div>
