@@ -29,7 +29,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className={`relative bg-ink
+      className={`relative
         px-[2.092vh] tp:px-[3.488vh] tl:px-[7.752vh] dt:px-[14.706vh] py-[5.858vh] tp:py-[5.233vh] tl:py-[6.202vh] dt:py-[9.559vh]`}
     >
       <div
@@ -38,7 +38,7 @@ export default function About() {
       >
         <Reveal className="order-2 tl:order-1 dt:order-1">
           <div
-            className={`flex flex-col items-start bg-white/10
+            className={`relative flex flex-col items-start bg-white/10
               ${cardRadius} p-[2.092vh] tp:p-[2.907vh] tl:p-[3.101vh] dt:p-[4.564vh] gap-[2.092vh] tp:gap-[2.18vh] tl:gap-[2.519vh] dt:gap-[3.186vh] backdrop-blur-[2.51vh] tp:backdrop-blur-[1.744vh] tl:backdrop-blur-[2.326vh] dt:backdrop-blur-[2.941vh]`}
           >
             <div

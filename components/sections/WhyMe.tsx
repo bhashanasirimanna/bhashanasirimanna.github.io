@@ -45,7 +45,7 @@ export default function WhyMe() {
   return (
     <section
       id="why-me"
-      className="relative overflow-hidden bg-ink px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.848vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[15.319vh]"
+      className="relative overflow-x-clip px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.848vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[15.319vh]"
     >
       <GlowOrb
         className="right-[-27.197vh] tp:right-[-21.802vh] tl:right-[-38.76vh] dt:right-[-63.725vh] top-[-12.552vh] tp:top-[-10.901vh] tl:top-[-19.38vh] dt:top-[-32.843vh] size-[41.841vh] tp:size-[43.605vh] tl:size-[62.984vh] dt:size-[87.01vh] rotate-[23deg] opacity-[0.26]"

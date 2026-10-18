@@ -46,7 +46,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-ink px-[2.51vh] tp:px-[2.907vh] tl:px-[3.876vh] dt:px-[3.554vh] py-[8.368vh] tp:py-[7.267vh] tl:py-[8.721vh] dt:py-[14.461vh]"
+      className="relative overflow-x-clip px-[2.51vh] tp:px-[2.907vh] tl:px-[3.876vh] dt:px-[3.554vh] py-[8.368vh] tp:py-[7.267vh] tl:py-[8.721vh] dt:py-[14.461vh]"
     >
       <GlowOrb className="hidden opacity-30 tl:block dt:block tl:-left-[16.473vh] dt:-left-[24.51vh] tl:top-[8.721vh] dt:top-[12.255vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#7de112" />
       <GlowOrb className="hidden opacity-30 tl:block dt:block tl:-right-[14.535vh] dt:-right-[22.059vh] tl:top-[8.721vh] dt:top-[12.255vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#7de112" />

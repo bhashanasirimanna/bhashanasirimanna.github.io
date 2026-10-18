@@ -54,8 +54,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-ink px-[2.092vh] tp:px-[2.907vh] tl:px-[4.651vh] dt:px-[7.23vh] py-[7.531vh] tp:py-[7.267vh] tl:py-[8.721vh] dt:py-[11.642vh]">
-      <GlowOrb className="left-1/3 opacity-30 -top-[26.151vh] tp:-top-[21.802vh] tl:-top-[29.07vh] dt:-top-[42.279vh] size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#7de112" />
+    <section id="contact" className="relative overflow-x-clip px-[2.092vh] tp:px-[2.907vh] tl:px-[4.651vh] dt:px-[7.23vh] py-[7.531vh] tp:py-[7.267vh] tl:py-[8.721vh] dt:py-[11.642vh]">
+      <GlowOrb className="left-1/3 opacity-30 -top-[26.151vh] tp:-top-[21.802vh] tl:-top-[29.07vh] dt:-top-[42.279vh] size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#424242" />
 
       <div className="relative mx-auto flex w-full flex-col items-center max-w-[62.762vh] tp:max-w-[65.407vh] tl:max-w-[124.031vh] dt:max-w-[161.887vh] gap-[5.021vh] tp:gap-[4.07vh] tl:gap-[5.426vh] dt:gap-[7.353vh]">
         <Reveal className="flex w-full flex-col items-center text-center max-w-[46.025vh] tp:max-w-[50.872vh] tl:max-w-[67.829vh] dt:max-w-[96.814vh] gap-[1.674vh] tp:gap-[1.453vh] tl:gap-[1.938vh] dt:gap-[2.941vh]">

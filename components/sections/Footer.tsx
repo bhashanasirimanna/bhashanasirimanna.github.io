@@ -4,7 +4,7 @@ import GlowOrb from "@/components/GlowOrb";
 export default function Footer() {
   return (
     <footer className="relative flex items-center justify-center overflow-hidden bg-ink min-h-[23.013vh] tp:min-h-[21.802vh] tl:min-h-[25.194vh] dt:min-h-[42.157vh] px-[2.51vh] tp:px-[2.907vh] tl:px-[4.651vh] dt:px-[2.941vh] py-[6.695vh] tp:py-[5.814vh] tl:py-[6.202vh] dt:py-[7.843vh]">
-      <GlowOrb className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#7de112" />
+      <GlowOrb className="left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 opacity-100 size-[33.473vh] tp:size-[30.523vh] tl:size-[38.76vh] dt:size-[55.27vh]" color="#424242" />
 
       <div aria-hidden className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center overflow-hidden opacity-[0.03] gap-[2.51vh] tp:gap-[1.744vh] tl:gap-[2.326vh] dt:gap-[2.941vh]">
         {[0, 1, 2].map((i) => (

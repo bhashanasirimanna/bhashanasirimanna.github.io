@@ -364,7 +364,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className={`relative overflow-hidden bg-ink
+      className={`relative overflow-x-clip
         px-[2.092vh] tp:px-[4.651vh] tl:px-[7.752vh] dt:px-[14.706vh]
         pt-[6.695vh] tp:pt-[6.977vh] tl:pt-[7.752vh] dt:pt-[12.132vh]
         pb-[6.695vh] tp:pb-[6.977vh] tl:pb-[8.721vh] dt:pb-[13.48vh]

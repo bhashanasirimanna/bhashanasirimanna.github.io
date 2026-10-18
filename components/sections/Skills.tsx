@@ -66,7 +66,7 @@ export default function Skills() {
 
   return (
     <section id="skills"
-      className="relative overflow-hidden bg-ink px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.113vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[12.745vh]"
+      className="relative overflow-x-clip px-[2.51vh] tp:px-[4.651vh] tl:px-[6.202vh] dt:px-[14.706vh] pt-[8.368vh] tp:pt-[7.267vh] tl:pt-[9.69vh] dt:pt-[13.113vh] pb-[8.368vh] tp:pb-[7.267vh] tl:pb-[9.69vh] dt:pb-[12.745vh]"
     >
       <p
         aria-hidden
