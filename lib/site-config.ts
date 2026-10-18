@@ -9,6 +9,7 @@ export const siteConfig = {
     "Induwara Sirimanna is a software engineer specializing in high-availability distributed systems, multi-tenant SaaS platforms, and LLM / AI integrations.",
   siteUrl: "https://bhashanasirimanna.github.io",
   email: "bhashanasirimanna@gmail.com",
+  birthDate: "2001-08-02",
   jobTitle: "Software Engineer",
   keywords: [
     "Induwara Sirimanna",

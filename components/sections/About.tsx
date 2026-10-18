@@ -1,13 +1,15 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import GithubIcon from "@/components/icons/GithubIcon";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import Reveal from "@/components/Reveal";
+import Age from "@/components/Age";
 import { siteConfig } from "@/lib/site-config";
 
-const details: Array<{ label: string; value: string }> = [
+const details: Array<{ label: string; value: ReactNode }> = [
   { label: "First Name", value: "Induwara" },
   { label: "Last Name", value: "Sirimanna" },
-  { label: "Age", value: "23 years" },
+  { label: "Age", value: <Age birthDate={siteConfig.birthDate} /> },
   { label: "Nationality", value: "Sri Lankan" },
   { label: "Email", value: siteConfig.email },
   { label: "Languages", value: "English, Sinhala" },
