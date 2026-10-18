@@ -75,6 +75,7 @@ export default function Hero() {
           max-w-[46.025vh] tp:max-w-[55.233vh] tl:max-w-[69.767vh] dt:top-[4.534vh] tl:right-[19.38vh] dt:right-[22.917vh]`}
       >
         <div className="relative aspect-square w-full overflow-hidden [mask-image:linear-gradient(to_bottom,#000_82%,transparent)] tl:[mask-image:none] dt:[mask-image:none]">
+          <div className="absolute z-10 bottom-0 left-0 w-full aspect-[634/584] bg-linear-to-t from-[#121212] via-[#121212]/5 to-[#121212]/0" />
           <Image
             src="/images/profile/hero.png"
             alt="Portrait of Induwara Sirimanna, software engineer"
@@ -86,7 +87,7 @@ export default function Hero() {
       </Reveal>
 
       <div
-        className={`relative order-4 flex w-full flex-col items-start justify-end self-center tl:absolute tl:self-auto dt:absolute dt:self-auto
+        className={`relative order-4 z-20 flex w-full flex-col items-start justify-end self-center tl:absolute tl:self-auto dt:absolute dt:self-auto
           max-w-[46.025vh] tp:max-w-[55.233vh] tl:max-w-[46.512vh] dt:max-w-[48.529vh] gap-[2.092vh] tp:gap-[1.744vh] tl:gap-[2.713vh] dt:gap-[2.941vh] tl:bottom-[8.333vh] dt:bottom-[8.348vh] tl:right-[7.752vh] dt:right-[14.706vh]`}
       >
         <Reveal delay={0.2} className="w-full">
