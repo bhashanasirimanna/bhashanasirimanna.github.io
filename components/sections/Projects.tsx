@@ -60,7 +60,7 @@ export default function Projects() {
             tp:max-w-[46.512vh] tl:max-w-[48.45vh] dt:max-w-[65.441vh]`}
         >
           <h2
-            className={`bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display font-bold leading-[0.9] text-transparent opacity-90
+            className={`bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display font-bold leading-[1.3] text-transparent opacity-90
               text-[clamp(3.766vh,11vw,5.021vh)] tp:text-[clamp(4.07vh,11vw,6.105vh)] tl:text-[clamp(5.426vh,11vw,6.977vh)] dt:text-[clamp(4.412vh,11vw,10.049vh)]`}
           >
             My Projects

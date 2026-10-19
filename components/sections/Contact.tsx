@@ -78,7 +78,7 @@ export default function Contact() {
 
       <div className="relative mx-auto flex w-full flex-col items-center max-w-[62.762vh] tp:max-w-[65.407vh] tl:max-w-[124.031vh] dt:max-w-[161.887vh] gap-[5.021vh] tp:gap-[4.07vh] tl:gap-[5.426vh] dt:gap-[7.353vh]">
         <Reveal className="flex w-full flex-col items-center text-center max-w-[46.025vh] tp:max-w-[50.872vh] tl:max-w-[67.829vh] dt:max-w-[96.814vh] gap-[1.674vh] tp:gap-[1.453vh] tl:gap-[1.938vh] dt:gap-[2.941vh]">
-          <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(3.488vh,7vw,6.977vh)] tl:text-[clamp(4.651vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[0.9] text-transparent opacity-90">
+          <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(3.488vh,7vw,6.977vh)] tl:text-[clamp(4.651vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[1.3] text-transparent opacity-90">
             Let&rsquo;s Talk
           </h2>
           <p className="font-body leading-[1.35] text-white/50 text-[1.883vh] tp:text-[1.744vh] tl:text-[1.938vh] dt:text-[2.941vh] tracking-[0.105vh] tp:tracking-[0.087vh] tl:tracking-[0.107vh] dt:tracking-[0.147vh]">

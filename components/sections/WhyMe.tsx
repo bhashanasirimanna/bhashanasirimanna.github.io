@@ -54,7 +54,7 @@ export default function WhyMe() {
 
       <div className="relative mx-auto flex flex-col gap-[5.021vh] tp:gap-[4.651vh] tl:gap-[7.752vh] dt:gap-[13.971vh]">
         <Reveal className="flex max-w-[64.017vh] tp:max-w-[44.477vh] tl:max-w-[59.302vh] dt:max-w-[75vh] flex-col items-start gap-[1.674vh] tp:gap-[1.453vh] tl:gap-[1.938vh] dt:gap-[2.941vh]">
-          <h2 className="bg-gradient-to-r from-white to-white/90 bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(4.07vh,7vw,5.959vh)] tl:text-[clamp(3.488vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[0.9] text-transparent">
+          <h2 className="bg-gradient-to-r from-white to-white/90 bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(4.07vh,7vw,5.959vh)] tl:text-[clamp(3.488vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[1.3] text-transparent">
             Why Me
           </h2>
           <p className="font-body text-[2.092vh] tp:text-[1.744vh] tl:text-[2.132vh] dt:text-[2.941vh] leading-[1.35] tracking-[0.126vh] tp:tracking-[0.087vh] tl:tracking-[0.116vh] dt:tracking-[0.147vh] text-white/85">

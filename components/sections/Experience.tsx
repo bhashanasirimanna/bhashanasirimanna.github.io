@@ -81,7 +81,7 @@ const education: TimelineItem[] = [
   {
     id: "sliit",
     period: "Jun 2020 - Jun 2026",
-    title: "BSc (Hons) Information Technology",
+    title: "BSc (Hons) in Software Engineering",
     org: "Sri Lanka Institute of Information Technology (SLIIT)",
     orgUrl: "https://www.sliit.lk",
     summary: "Specializing in Software Engineering (WGPA 3.09 / CGPA 3.14).",
@@ -405,7 +405,7 @@ export default function Experience() {
             tp:max-w-[46.512vh] tl:max-w-[40.698vh] dt:max-w-[62.255vh]`}
         >
           <h2
-            className={`bg-gradient-to-r from-white to-white/90 bg-clip-text font-display font-bold leading-[0.9] text-transparent
+            className={`bg-gradient-to-r from-white to-white/90 bg-clip-text font-display font-bold leading-[1.3] text-transparent
               text-[clamp(3.556vh,10vw,5.021vh)] tp:text-[clamp(4.07vh,10vw,6.105vh)] tl:text-[clamp(3.876vh,10vw,6.977vh)] dt:text-[clamp(3.922vh,10vw,10.049vh)]`}
           >
             Education &amp; Experience

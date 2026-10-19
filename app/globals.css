@@ -46,6 +46,54 @@
   color-scheme: dark;
 }
 
+/* Thin scrollbar with green thumb */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-soft-text);
+}
+
+/* Thin scrollbar with green thumb */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-soft-text);
+}
+
 * {
   box-sizing: border-box;
 }

@@ -136,7 +136,7 @@ export default function About() {
               className={`flex w-full flex-col items-start tl:items-end dt:items-end gap-[1.046vh] tp:gap-[1.163vh] tl:gap-[1.744vh] dt:gap-[1.961vh]`}
             >
               <h2
-                className={`bg-gradient-to-r from-white to-white/90 bg-clip-text font-display font-bold leading-[0.9] text-transparent opacity-90
+                className={`bg-gradient-to-r from-white to-white/90 bg-clip-text font-display font-bold leading-[1.3] text-transparent opacity-90
                   text-[clamp(3.766vh,12vw,5.858vh)] tp:text-[clamp(4.36vh,9vw,6.977vh)] tl:text-[clamp(6.202vh,6vw,9.69vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)]`}
               >
                 About Me

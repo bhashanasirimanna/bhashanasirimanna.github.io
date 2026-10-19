@@ -60,7 +60,7 @@ export default function Testimonials() {
 
       <div className="relative mx-auto flex w-full flex-col items-center text-center max-w-[46.025vh] tp:max-w-[65.407vh] tl:max-w-[106.589vh] dt:max-w-[139.706vh] gap-[5.858vh] tp:gap-[4.651vh] tl:gap-[6.977vh] dt:gap-[14.461vh]">
         <Reveal className="flex w-full flex-col items-center max-w-[46.025vh] tp:max-w-[50.872vh] tl:max-w-[58.14vh] dt:max-w-[76.348vh] gap-[1.674vh] tp:gap-[1.453vh] tl:gap-[1.938vh] dt:gap-[2.941vh]">
-          <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(3.488vh,7vw,6.977vh)] tl:text-[clamp(4.651vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[0.9] text-transparent opacity-90">
+          <h2 className="bg-gradient-to-r from-white from-[0.1%] to-white/90 to-[74%] bg-clip-text font-display text-[clamp(3.766vh,7vw,8.577vh)] tp:text-[clamp(3.488vh,7vw,6.977vh)] tl:text-[clamp(4.651vh,7vw,7.946vh)] dt:text-[clamp(4.412vh,7vw,10.049vh)] font-bold leading-[1.3] text-transparent opacity-90">
             Client Testimonials
           </h2>
           <p className="font-body leading-[1.35] text-white/85 text-[1.883vh] tp:text-[1.744vh] tl:text-[1.938vh] dt:text-[2.941vh] tracking-[0.105vh] tp:tracking-[0.087vh] tl:tracking-[0.107vh] dt:tracking-[0.147vh]">
